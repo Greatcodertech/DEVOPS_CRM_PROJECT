@@ -2,19 +2,40 @@
 <html>
 <head>
     <title>Movies Page</title>
+
+    <script>
+        function showMessage() {
+            alert("Welcome to My Movies Page 🎬");
+        }
+
+        function addMovie() {
+            var movieName = document.getElementById("movieInput").value;
+            if(movieName !== "") {
+                var li = document.createElement("li");
+                li.textContent = movieName;
+                document.getElementById("movieList").appendChild(li);
+                document.getElementById("movieInput").value = "";
+            }
+        }
+    </script>
 </head>
-<body>
+
+<body onload="showMessage()">
 
     <h1>My Favorite Movies 🎬</h1>
 
-    <ul>
+    <input type="text" id="movieInput" placeholder="Enter movie name">
+    <button onclick="addMovie()">Add Movie</button>
+
+    <ul id="movieList">
         <li>RRR</li>
         <li>Bahubali</li>
         <li>KGF</li>
         <li>Pushpa</li>
     </ul>
 
-    <p>Welcome to my movies page. Here you can see my favorite movies list!</p>
+    <p>Welcome to my movies page. Here you can add your favorite movies!</p>
 
 </body>
 </html>
+
